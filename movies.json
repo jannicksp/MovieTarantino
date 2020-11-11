@@ -1,44 +1,58 @@
 [
     {
         "name": "The Hateful Eight",
-        "Year": 2009,
-        "Description": "lorem ispum",
-        "id": 1
+        "year": 2009,
+        "description": "lorem ispum",
+        "id": 1,
+        "youtubeId": "v=nIOmotayDMY",
+        "img": "https://via.placeholder.com/150"
     },
     {
         "name": "Django Unchained",
-        "Year": 2009,
-        "Description": "lorem ispum",
-        "id": 2
+        "year": 2009,
+        "description": "lorem ispum",
+        "id": 2,
+        "youtubeId": "v=0fUCuvNlOCg",
+        "img": "https://via.placeholder.com/150"
     },
     {
         "name": "Inglorious Basterds",
-        "Year": 2009,
-        "Description": "lorem ispum",
-        "id": 3
+        "year": 2009,
+        "description": "lorem ispum",
+        "id": 3,
+        "youtubeId": "v=KnrRy6kSFF0",
+        "img": "https://via.placeholder.com/150"
     },
     {
         "name": "Kill Bill Vol. 2",
-        "Year": 2009,
-        "Description": "lorem ispum",
-        "id": 4
+        "year": 2009,
+        "description": "lorem ispum",
+        "id": 4,
+        "youtubeId": "v=WTt8cCIvGYI",
+        "img": "https://via.placeholder.com/150"
     },
     {
         "name": "Kill Bill Vol. 1",
-        "Year": 2009,
-        "Description": "lorem ispum",
-        "id": 5
+        "year": 2009,
+        "description": "lorem ispum",
+        "id": 5,
+        "youtubeId": "v=7kSuas6mRpk",
+        "img": "https://via.placeholder.com/150"
     },
     {
         "name": "From Dusk til Dawn",
-        "Year": 2009,
-        "Description": "lorem ispum",
-        "id": 6
+        "year": 2009,
+        "description": "lorem ispum",
+        "id": 6,
+        "youtubeId": "v=txqpLEufGnA",
+        "img": "https://via.placeholder.com/150"
     },
     {
         "name": "Pulp Fiction",
-        "Year": 2009,
-        "Description": "lorem ispum",
-        "id": 7
+        "year": 2009,
+        "description": "lorem ispum",
+        "id": 7,
+        "youtubeId": "v=s7EdQ4FqbhY",
+        "img": "https://via.placeholder.com/150"
     }
 ]
