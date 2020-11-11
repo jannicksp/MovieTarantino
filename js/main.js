@@ -39,7 +39,7 @@ function showData(){
 
     clone.querySelector("img").src = movie.img;
     clone.querySelector("img").alt = "placeholder alt";
-    clone.querySelector("h3").innerHTML = movie.name;
+    // clone.querySelector("h3").innerHTML = movie.name;
   
    
     dest.appendChild(clone);
