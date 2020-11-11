@@ -297,3 +297,36 @@ textarea {
   cursor: pointer;
 }
 
+header{
+  display: flex;
+  justify-content: center;
+  height: 50px;
+  background-color: #e50914;
+}
+
+.subheader{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+main{
+  min-height: 100vh;
+}
+.moviesection{
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+.moviearticle{
+  display: flex;
+  justify-content: center;
+  flex-basis: 33.333333%;
+  padding-bottom: 10%;
+}
+
+footer{
+  display: flex;
+  justify-content: center;
+  height: 50px;
+  background-color: #e50914;
+}
