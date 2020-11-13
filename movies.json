@@ -5,7 +5,8 @@
         "description": "lorem ispum",
         "id": 1,
         "youtubeId": "v=nIOmotayDMY",
-        "img": "https://via.placeholder.com/150"
+        "img": "https://via.placeholder.com/150",
+        "fetchURL": "http://www.omdbapi.com/?t=The_Hateful_Eight&apikey=253876a"
     },
     {
         "name": "Django Unchained",
@@ -13,7 +14,8 @@
         "description": "lorem ispum",
         "id": 2,
         "youtubeId": "v=0fUCuvNlOCg",
-        "img": "https://via.placeholder.com/150"
+        "img": "https://via.placeholder.com/150",
+        "fetchURL": "http://www.omdbapi.com/?t=Django_Unchained&apikey=253876a"
     },
     {
         "name": "Inglorious Basterds",
@@ -21,7 +23,8 @@
         "description": "lorem ispum",
         "id": 3,
         "youtubeId": "v=KnrRy6kSFF0",
-        "img": "https://via.placeholder.com/150"
+        "img": "https://via.placeholder.com/150",
+        "fetchURL": "http://www.omdbapi.com/?t=Inglorious_Basterds&apikey=253876a"
     },
     {
         "name": "Kill Bill Vol. 2",
@@ -29,7 +32,8 @@
         "description": "lorem ispum",
         "id": 4,
         "youtubeId": "v=WTt8cCIvGYI",
-        "img": "https://via.placeholder.com/150"
+        "img": "https://via.placeholder.com/150",
+        "fetchURL": "http://www.omdbapi.com/?t=Kill_Bill_Vol_2&apikey=253876a"
     },
     {
         "name": "Kill Bill Vol. 1",
@@ -37,7 +41,8 @@
         "description": "lorem ispum",
         "id": 5,
         "youtubeId": "v=7kSuas6mRpk",
-        "img": "https://via.placeholder.com/150"
+        "img": "https://via.placeholder.com/150",
+        "fetchURL": "http://www.omdbapi.com/?t=Kill_Bill_Vol_1&apikey=253876a"
     },
     {
         "name": "From Dusk til Dawn",
@@ -45,7 +50,8 @@
         "description": "lorem ispum",
         "id": 6,
         "youtubeId": "v=txqpLEufGnA",
-        "img": "https://via.placeholder.com/150"
+        "img": "https://via.placeholder.com/150",
+        "fetchURL": "http://www.omdbapi.com/?t=From_Dusk_Til_Dawn&apikey=253876a"
     },
     {
         "name": "Pulp Fiction",
@@ -53,6 +59,7 @@
         "description": "lorem ispum",
         "id": 7,
         "youtubeId": "v=s7EdQ4FqbhY",
-        "img": "https://via.placeholder.com/150"
+        "img": "https://via.placeholder.com/150",
+        "fetchURL": "http://www.omdbapi.com/?t=Pulp_Fiction&apikey=253876a"
     }
 ]

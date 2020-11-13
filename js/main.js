@@ -14,8 +14,19 @@ function init(){
 loadJSON();
 }
 
+// function loadJSON() {
+//   fetch("movies.json")
+//     .then(response => response.json())
+//     .then(jsonData => {
+//       movieData = jsonData;
+//       console.log(movieData);
+//       showData();
+//     });
+
+// }
+
 function loadJSON() {
-  fetch("movies.json")
+  fetch(`http://www.omdbapi.com/?q={"Director": "Quentin Tarantino"}&apikey=253876a`)
     .then(response => response.json())
     .then(jsonData => {
       movieData = jsonData;
