@@ -1,5 +1,6 @@
 "use strict";
 //empty array to store JSON data
+let movieList= [];
 let movieData= [];
 //Get the modal
 var modal = document.getElementById("myModal");
@@ -26,15 +27,35 @@ loadJSON();
 // }
 
 function loadJSON() {
-  fetch(`http://www.omdbapi.com/?q={"Director": "Quentin Tarantino"}&apikey=253876a`)
+  fetch("movies.json")
     .then(response => response.json())
     .then(jsonData => {
-      movieData = jsonData;
-      console.log(movieData);
-      showData();
+      movieList = jsonData;
+      //console.log(movieData);
+      fetchDataUrls();
+      //showData();
     });
 
 }
+
+
+
+function fetchDataUrls() {
+
+movieList.forEach(movie =>{
+  fetch(`${movie.fetchURL}`)
+  .then(resp=> resp.json())
+ .then(jsonData => {
+    movieData.push(jsonData);
+    //movieData = jsonData;
+  });
+})
+
+console.log(movieData);
+showData(movieData);
+
+}
+
 //for later API fetch:
 // fetch("pathToFetchURL", {
 //   method: "get",
@@ -46,7 +67,8 @@ function loadJSON() {
 
 
 
-function showData(){
+function showData(movieData){
+ 
   //set destination for where all the clones should go
   const dest = document.querySelector("section#moviesList");
   //get the template for the movie
@@ -56,8 +78,9 @@ function showData(){
   movieData.forEach(movie => {
     //1:
     let clone = tempMovie.cloneNode(true).content;
-    clone.querySelector("img").src = movie.img;
-    clone.querySelector("img").alt = "placeholder alt";
+    clone.querySelector("img").src = movie.Poster;
+    clone.querySelector("img").alt = movie.Title;
+    console.log(movie.Title);
     // clone.querySelector("h3").innerHTML = movie.name;
   
   
@@ -67,9 +90,9 @@ function showData(){
     //3:
     dest.lastElementChild.addEventListener("click", ()=>{
       modal.style.display = "block";
-document.querySelector("#myModal h2").innerHTML = movie.name;
-document.querySelector("#myModal p").innerHTML = movie.description;
-document.querySelector(".modal-content").lastElementChild.innerHTML = movie.year;
+document.querySelector("#myModal h2").innerHTML = movie.Title;
+document.querySelector("#myModal p").innerHTML = movie.Plot;
+document.querySelector(".modal-content").lastElementChild.innerHTML = movie.Year;
   //to do: add the rest, video src etc
     })
   }); 

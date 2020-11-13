@@ -24,7 +24,7 @@
         "id": 3,
         "youtubeId": "v=KnrRy6kSFF0",
         "img": "https://via.placeholder.com/150",
-        "fetchURL": "http://www.omdbapi.com/?t=Inglorious_Basterds&apikey=253876a"
+        "fetchURL": "http://www.omdbapi.com/?t=Inglourious_Basterds&apikey=253876a"
     },
     {
         "name": "Kill Bill Vol. 2",
@@ -51,7 +51,7 @@
         "id": 6,
         "youtubeId": "v=txqpLEufGnA",
         "img": "https://via.placeholder.com/150",
-        "fetchURL": "http://www.omdbapi.com/?t=From_Dusk_Til_Dawn&apikey=253876a"
+        "fetchURL": "http://www.omdbapi.com/?t=From_Dusk_Till_Dawn&apikey=253876a"
     },
     {
         "name": "Pulp Fiction",
