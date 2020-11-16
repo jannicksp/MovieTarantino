@@ -1,7 +1,7 @@
 "use strict";
 //empty array to store JSON data
 let movieList= [];
-let movieData= [];
+
 //Get the modal
 var modal = document.getElementById("myModal");
 // Get the button that opens the modal
@@ -30,58 +30,48 @@ function loadJSON() {
   fetch("movies.json")
     .then(response => response.json())
     .then(jsonData => {
-      movieList = jsonData;
-      //console.log(movieData);
-      fetchDataUrls();
-      //showData();
+      jsonData.forEach(movie=>{
+        movieList.push(movie.fetchURL);
+      })
+
+       fetchDataUrls();
+ 
     });
 
 }
 
 
 
+let movieData= [];
+
 function fetchDataUrls() {
 
-movieList.forEach(movie =>{
-  fetch(`${movie.fetchURL}`)
-  .then(resp=> resp.json())
- .then(jsonData => {
-    movieData.push(jsonData);
-    //movieData = jsonData;
-  });
-})
-
-console.log(movieData);
-showData(movieData);
+  Promise.all(movieList.map(url =>
+    fetch(url)
+      .then(resp=> resp.json())                 
+  )).then(data => {
+    console.log(data);
+    console.log(data[0]);
+    showData(data);
+   
+  })
 
 }
 
-//for later API fetch:
-// fetch("pathToFetchURL", {
-//   method: "get",
-//   headers: {
-//     "Content-Type": "application/json; charset=utf-8",
-//     "x-apikey": "5dea0bc34658275ac9dc23ad",
-//     "cache-control": "no-cache"
-//   }
 
 
 
-function showData(movieData){
- 
+function showData(data){
   //set destination for where all the clones should go
   const dest = document.querySelector("section#moviesList");
   //get the template for the movie
   const tempMovie = document.querySelector("template");
-
    //For each movie object in the JSON file, 1. make a clone from the template, 2. add it to the DOM, 3. add an eventlistener
-  movieData.forEach(movie => {
+  data.forEach(movie => {
     //1:
     let clone = tempMovie.cloneNode(true).content;
     clone.querySelector("img").src = movie.Poster;
     clone.querySelector("img").alt = movie.Title;
-    console.log(movie.Title);
-    // clone.querySelector("h3").innerHTML = movie.name;
   
   
    //2:

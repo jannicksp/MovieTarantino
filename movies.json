@@ -1,65 +1,23 @@
 [
     {
-        "name": "The Hateful Eight",
-        "year": 2015,
-        "description": "lorem ispum",
-        "id": 1,
-        "youtubeId": "v=nIOmotayDMY",
-        "img": "https://via.placeholder.com/150",
         "fetchURL": "http://www.omdbapi.com/?t=The_Hateful_Eight&apikey=253876a"
     },
     {
-        "name": "Django Unchained",
-        "year": 2012,
-        "description": "lorem ispum",
-        "id": 2,
-        "youtubeId": "v=0fUCuvNlOCg",
-        "img": "https://via.placeholder.com/150",
         "fetchURL": "http://www.omdbapi.com/?t=Django_Unchained&apikey=253876a"
     },
     {
-        "name": "Inglorious Basterds",
-        "year": 2009,
-        "description": "lorem ispum",
-        "id": 3,
-        "youtubeId": "v=KnrRy6kSFF0",
-        "img": "https://via.placeholder.com/150",
         "fetchURL": "http://www.omdbapi.com/?t=Inglourious_Basterds&apikey=253876a"
     },
     {
-        "name": "Kill Bill Vol. 2",
-        "year": 2004,
-        "description": "lorem ispum",
-        "id": 4,
-        "youtubeId": "v=WTt8cCIvGYI",
-        "img": "https://via.placeholder.com/150",
         "fetchURL": "http://www.omdbapi.com/?t=Kill_Bill_Vol_2&apikey=253876a"
     },
     {
-        "name": "Kill Bill Vol. 1",
-        "year": 2003,
-        "description": "lorem ispum",
-        "id": 5,
-        "youtubeId": "v=7kSuas6mRpk",
-        "img": "https://via.placeholder.com/150",
         "fetchURL": "http://www.omdbapi.com/?t=Kill_Bill_Vol_1&apikey=253876a"
     },
     {
-        "name": "From Dusk til Dawn",
-        "year": 1996,
-        "description": "lorem ispum",
-        "id": 6,
-        "youtubeId": "v=txqpLEufGnA",
-        "img": "https://via.placeholder.com/150",
         "fetchURL": "http://www.omdbapi.com/?t=From_Dusk_Till_Dawn&apikey=253876a"
     },
     {
-        "name": "Pulp Fiction",
-        "year": 1994,
-        "description": "lorem ispum",
-        "id": 7,
-        "youtubeId": "v=s7EdQ4FqbhY",
-        "img": "https://via.placeholder.com/150",
         "fetchURL": "http://www.omdbapi.com/?t=Pulp_Fiction&apikey=253876a"
     }
 ]
