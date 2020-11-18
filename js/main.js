@@ -15,23 +15,23 @@ function init(){
 loadJSON();
 }
 
-// function loadJSON() {
-//   fetch("movies.json")
-//     .then(response => response.json())
-//     .then(jsonData => {
-//       movieData = jsonData;
-//       console.log(movieData);
-//       showData();
-//     });
+ // 2. This code loads the IFrame Player API code asynchronously.
+//  var tag = document.createElement('script');
 
-// }
+//  tag.src = "https://www.youtube.com/iframe_api";
+//  var firstScriptTag = document.getElementsByTagName('script')[0];
+//  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+
+
+
 
 function loadJSON() {
   fetch("movies.json")
     .then(response => response.json())
     .then(jsonData => {
       jsonData.forEach(movie=>{
-        movieList .push(movie.fetchURL);
+        movieList.push(movie);
       })
 
        fetchDataUrls();
@@ -46,13 +46,22 @@ let movieData= [];
 
 function fetchDataUrls() {
 
-  Promise.all(movieList.map(url =>
-    fetch(url)
+  Promise.all(movieList.map(movie =>
+    fetch(movie.fetchURL)
       .then(resp=> resp.json())                 
   )).then(data => {
-    console.log(data);
-    console.log(data[0]);
-    showData(data);
+
+    for (let i = 0; i < movieList.length; i++) {
+      
+      movieList[i].Title = data[i].Title;
+      movieList[i].Poster = data[i].Poster;
+      movieList[i].Year = data[i].Year;
+      movieList[i].Plot = data[i].Plot;
+      movieList[i].Rating = data[i].Ratings[0].Value;
+      
+    }
+    console.log(movieList);
+    showData(movieList);
    
   })
 
@@ -82,23 +91,78 @@ function showData(data){
       modal.style.display = "block";
 document.querySelector("#myModal h2").innerHTML = movie.Title;
 document.querySelector("#myModal p").innerHTML = movie.Plot;
-document.querySelector(".rating").innerHTML += movie.Ratings[0].Value;
-document.querySelector(".modal-content").lastElementChild.innerHTML += movie.Year;
+//document.querySelector(".rating").innerHTML = "Rating: " + movie.Ratings[0].Value;
+document.querySelector(".rating").innerHTML = "Rating: " + movie.Rating;
+document.querySelector(".modal-content").lastElementChild.innerHTML = "Year: " + movie.Year;
 
+onYouTubeIframeAPIReady(movie.youtubeId);
+console.log(movie.youtubeId);
+
+ 
   //to do: add the rest, video src etc
     })
   }); 
   //forEach loop end. 
- 
 
-//in case of bigger scope, otherwise just delete:
-  // document.querySelectorAll(".movie").forEach(movie =>{
-  //   movie.addEventListener("click", openModal);
-  // })
 
  
 
 }
+
+
+
+// 3. This function creates an <iframe> (and YouTube player)
+ //    after the API code downloads.
+ var player;
+ function onYouTubeIframeAPIReady(id) {
+  player = new YT.Player('player', {
+    height: '390',
+    width: '640',
+    videoId: id,
+    events: {
+      'onReady': onPlayerReady,
+      'onStateChange': onPlayerStateChange
+    }
+  });
+}
+
+
+// // 3. This function creates an <iframe> (and YouTube player)
+//  //    after the API code downloads.
+//  var player;
+//  function onYouTubeIframeAPIReady() {
+//   player = new YT.Player('player', {
+//     height: '390',
+//     width: '640',
+//     videoId: "M7lc1UVf-VE",
+//     events: {
+//       'onReady': onPlayerReady,
+//       'onStateChange': onPlayerStateChange
+//     }
+//   });
+// }
+
+ // 4. The API will call this function when the video player is ready.
+ function onPlayerReady(event) {
+   event.target.playVideo();
+ }
+
+ // 5. The API calls this function when the player's state changes.
+ //    The function indicates that when playing a video (state=1),
+ //    the player should play for six seconds and then stop.
+ var done = false;
+ function onPlayerStateChange(event) {
+   if (event.data == YT.PlayerState.PLAYING && !done) {
+     setTimeout(stopVideo, 6000);
+     done = true;
+   }
+ }
+ function stopVideo() {
+   player.stopVideo();
+ }
+
+
+
 
 // When the user clicks on <span> (x), close the modal
 span.onclick = () => {
