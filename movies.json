@@ -1,30 +1,30 @@
 [
     {
         "fetchURL": "http://www.omdbapi.com/?t=The_Hateful_Eight&apikey=253876a",
-        "youtubeId": "v=nIOmotayDMY"
+        "youtubeId": "nIOmotayDMY"
     },
     {
         "fetchURL": "http://www.omdbapi.com/?t=Django_Unchained&apikey=253876a",
-        "youtubeId": "v=0fUCuvNlOCg"
+        "youtubeId": "_iH0UBYDI4g"
     },
     {
         "fetchURL": "http://www.omdbapi.com/?t=Inglourious_Basterds&apikey=253876a",
-        "youtubeId": "v=KnrRy6kSFF0"
+        "youtubeId": "KnrRy6kSFF0"
     },
     {
         "fetchURL": "http://www.omdbapi.com/?t=Kill_Bill_Vol_2&apikey=253876a",
-        "youtubeId": "v=WTt8cCIvGYI"
+        "youtubeId": "WTt8cCIvGYI"
     },
     {
         "fetchURL": "http://www.omdbapi.com/?t=Kill_Bill_Vol_1&apikey=253876a",
-        "youtubeId": "v=7kSuas6mRpk"
+        "youtubeId": "7kSuas6mRpk"
     },
     {
         "fetchURL": "http://www.omdbapi.com/?t=From_Dusk_Till_Dawn&apikey=253876a",
-        "youtubeId": "v=txqpLEufGnA"
+        "youtubeId": "txqpLEufGnA"
     },
     {
         "fetchURL": "http://www.omdbapi.com/?t=Pulp_Fiction&apikey=253876a",
-        "youtubeId": "v=s7EdQ4FqbhY"
+        "youtubeId": "s7EdQ4FqbhY"
     }
 ]
