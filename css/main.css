@@ -182,7 +182,7 @@ textarea {
   margin: auto;
   padding: 20px;
   border: 1px solid #888;
-  width: 80%;
+  width: 50%;
 }
 .modal-content p {
   color: white;
@@ -191,21 +191,7 @@ textarea {
 .modal-content button {
   background: none;
   border: none;
-}
-.close {
-  color: black;
-  float: right;
-  font-size: 40px;
-  font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-  color: #000;
-  text-decoration: none;
-  cursor: pointer;
-  transform: scale(1.1);
-  transition-duration: 300ms;
+  z-index: 100;
 }
 
 header {
@@ -256,17 +242,35 @@ footer h2 {
   font-family: "helvetica", sans-serif;
 }
 .videoWrapper {
-	position: relative;
-	padding-bottom: 56.25%; /* 16:9 */
-	padding-top: 25px;
-	height: 0;
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+  padding-top: 25px;
+  height: 0;
+  margin-bottom: 10vh;
 }
 .videoWrapper iframe {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
+  position: absolute;
+  top: 8vh;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.close {
+  color: black;
+  float: right;
+  font-size: 40px;
+  font-weight: bold;
+  position: absolute;
+  right: 2vw;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+  transform: scale(1.1);
+  transition-duration: 300ms;
 }
 
 /* ANIMATION*/
@@ -301,5 +305,12 @@ footer h2 {
 @media only screen and (max-width: 812px) {
   .moviesection {
     justify-content: center;
+  }
+  .close {
+    right: 4vw;
+  }
+  .videoWrapper iframe {
+    position: absolute;
+    top: 32%;
   }
 }
