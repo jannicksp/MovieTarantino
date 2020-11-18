@@ -95,7 +95,7 @@ document.querySelector(".rating").innerHTML = "Rating: " + movie.Rating;
 document.querySelector(".modal-content").lastElementChild.innerHTML = "Year: " + movie.Year;
 let playerWrapper = document.createElement('div');
 playerWrapper.id = "player";
-document.querySelector("#myModal .modal-content").append(playerWrapper);
+document.querySelector("#myModal .modal-content .videoWrapper").append(playerWrapper);
 
 
 //onYouTubeIframeAPIReady("M7lc1UVf-VE");
@@ -161,6 +161,8 @@ document.querySelector("#myModal iframe#player").remove();
 //When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
   if (event.target == modal) {
+document.querySelector("#myModal iframe#player").remove();
+    
     modal.style.display = "none";
   }
 }
