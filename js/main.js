@@ -1,7 +1,7 @@
 "use strict";
 //empty array to store JSON data
 let movieList= [];
-
+let player;
 //Get the modal
 var modal = document.getElementById("myModal");
 // Get the button that opens the modal
@@ -91,16 +91,19 @@ function showData(data){
       modal.style.display = "block";
 document.querySelector("#myModal h2").innerHTML = movie.Title;
 document.querySelector("#myModal p").innerHTML = movie.Plot;
-//document.querySelector(".rating").innerHTML = "Rating: " + movie.Ratings[0].Value;
 document.querySelector(".rating").innerHTML = "Rating: " + movie.Rating;
 document.querySelector(".modal-content").lastElementChild.innerHTML = "Year: " + movie.Year;
+let playerWrapper = document.createElement('div');
+playerWrapper.id = "player";
+document.querySelector("#myModal .modal-content").append(playerWrapper);
+
 
 //onYouTubeIframeAPIReady("M7lc1UVf-VE");
 onYouTubeIframeAPIReady();
 
 // 3. This function creates an <iframe> (and YouTube player)
  //    after the API code downloads.
- var player;
+
  function onYouTubeIframeAPIReady() {
   player = new YT.Player('player', {
     height: '390',
@@ -128,26 +131,10 @@ onYouTubeIframeAPIReady();
 
 
 
-// // 3. This function creates an <iframe> (and YouTube player)
-//  //    after the API code downloads.
-//  var player;
-//  function onYouTubeIframeAPIReady() {
-//   player = new YT.Player('player', {
-//     height: '390',
-//     width: '640',
-//     videoId: "M7lc1UVf-VE",
-//     events: {
-//       'onReady': onPlayerReady,
-//       'onStateChange': onPlayerStateChange
-//     }
-//   });
-// }
-
  // 4. The API will call this function when the video player is ready.
  function onPlayerReady(event) {
    event.target.playVideo();
  }
-
  // 5. The API calls this function when the player's state changes.
  //    The function indicates that when playing a video (state=1),
  //    the player should play for six seconds and then stop.
@@ -168,6 +155,7 @@ onYouTubeIframeAPIReady();
 // When the user clicks on <span> (x), close the modal
 span.onclick = () => {
   modal.style.display = "none";
+document.querySelector("#myModal iframe#player").remove();
 }
 
 //When the user clicks anywhere outside of the modal, close it
