@@ -1,6 +1,7 @@
 "use strict";
 //empty array to store JSON data
 let movieList= [];
+//yt player variable:
 let player;
 //Get the modal
 var modal = document.getElementById("myModal");
@@ -14,17 +15,6 @@ window.addEventListener("DOMContentLoaded", init);
 function init(){
 loadJSON();
 }
-
- // 2. This code loads the IFrame Player API code asynchronously.
-//  var tag = document.createElement('script');
-
-//  tag.src = "https://www.youtube.com/iframe_api";
-//  var firstScriptTag = document.getElementsByTagName('script')[0];
-//  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-
-
-
 
 function loadJSON() {
   fetch("movies.json")
@@ -40,27 +30,21 @@ function loadJSON() {
 
 }
 
-
-
-let movieData= [];
-
 function fetchDataUrls() {
-
+//wait for load of each movie data by creating a promise:
   Promise.all(movieList.map(movie =>
     fetch(movie.fetchURL)
       .then(resp=> resp.json())                 
   )).then(data => {
 
+    //merge the data we have with what we've got from OMDB:
     for (let i = 0; i < movieList.length; i++) {
-      
       movieList[i].Title = data[i].Title;
       movieList[i].Poster = data[i].Poster;
       movieList[i].Year = data[i].Year;
       movieList[i].Plot = data[i].Plot;
-      movieList[i].Rating = data[i].Ratings[0].Value;
-      
+      movieList[i].Rating = data[i].Ratings[0].Value;   
     }
-    console.log(movieList);
     showData(movieList);
    
   })
@@ -75,18 +59,16 @@ function showData(data){
   const dest = document.querySelector("section#moviesList");
   //get the template for the movie
   const tempMovie = document.querySelector("template");
-   //For each movie object in the JSON file, 1. make a clone from the template, 2. add it to the DOM, 3. add an eventlistener
+   //For each movie object in the JSON file: 
   data.forEach(movie => {
-    //1:
+    //1: make a clone from the template, 
     let clone = tempMovie.cloneNode(true).content;
     clone.querySelector("img").src = movie.Poster;
     clone.querySelector("img").alt = movie.Title;
-  
-  
-   //2:
+   //2: add it to the DOM, 
     dest.appendChild(clone);
-
-    //3:
+   
+    //3: add an eventlistener, and on click insert/show data:
     dest.lastElementChild.addEventListener("click", ()=>{
       modal.style.display = "block";
 document.querySelector("#myModal .desktop").innerHTML = movie.Title;
@@ -98,13 +80,11 @@ let playerWrapper = document.createElement('div');
 playerWrapper.id = "player";
 document.querySelector("#myModal .modal-content .videoWrapper").append(playerWrapper);
 
-
-//onYouTubeIframeAPIReady("M7lc1UVf-VE");
+//create the YT player:
 onYouTubeIframeAPIReady();
 
 // 3. This function creates an <iframe> (and YouTube player)
  //    after the API code downloads.
-
  function onYouTubeIframeAPIReady() {
   player = new YT.Player('player', {
     height: '390',
@@ -127,11 +107,6 @@ onYouTubeIframeAPIReady();
 
 }
 
-
-
-
-
-
  // 4. The API will call this function when the video player is ready.
  function onPlayerReady(event) {
    event.target.playVideo();
@@ -139,7 +114,7 @@ onYouTubeIframeAPIReady();
  // 5. The API calls this function when the player's state changes.
  //    The function indicates that when playing a video (state=1),
  //    the player should play for six seconds and then stop.
- var done = false;
+ let done = false;
  function onPlayerStateChange(event) {
    if (event.data == YT.PlayerState.PLAYING && !done) {
      setTimeout(stopVideo, 6000);
@@ -149,9 +124,6 @@ onYouTubeIframeAPIReady();
  function stopVideo() {
    player.stopVideo();
  }
-
-
-
 
 // When the user clicks on <span> (x), close the modal
 span.onclick = () => {
