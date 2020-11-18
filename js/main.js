@@ -95,11 +95,25 @@ document.querySelector("#myModal p").innerHTML = movie.Plot;
 document.querySelector(".rating").innerHTML = "Rating: " + movie.Rating;
 document.querySelector(".modal-content").lastElementChild.innerHTML = "Year: " + movie.Year;
 
-onYouTubeIframeAPIReady(movie.youtubeId);
-console.log(movie.youtubeId);
+//onYouTubeIframeAPIReady("M7lc1UVf-VE");
+onYouTubeIframeAPIReady();
+
+// 3. This function creates an <iframe> (and YouTube player)
+ //    after the API code downloads.
+ var player;
+ function onYouTubeIframeAPIReady() {
+  player = new YT.Player('player', {
+    height: '390',
+    width: '640',
+    videoId: movie.youtubeId,
+    events: {
+      'onReady': onPlayerReady,
+      'onStateChange': onPlayerStateChange
+    }
+  });
+}
 
  
-  //to do: add the rest, video src etc
     })
   }); 
   //forEach loop end. 
@@ -111,20 +125,7 @@ console.log(movie.youtubeId);
 
 
 
-// 3. This function creates an <iframe> (and YouTube player)
- //    after the API code downloads.
- var player;
- function onYouTubeIframeAPIReady(id) {
-  player = new YT.Player('player', {
-    height: '390',
-    width: '640',
-    videoId: id,
-    events: {
-      'onReady': onPlayerReady,
-      'onStateChange': onPlayerStateChange
-    }
-  });
-}
+
 
 
 // // 3. This function creates an <iframe> (and YouTube player)
