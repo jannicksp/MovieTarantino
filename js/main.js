@@ -31,7 +31,7 @@ function loadJSON() {
     .then(response => response.json())
     .then(jsonData => {
       jsonData.forEach(movie=>{
-        movieList.push(movie.fetchURL);
+        movieList .push(movie.fetchURL);
       })
 
        fetchDataUrls();
