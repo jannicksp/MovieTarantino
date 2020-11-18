@@ -89,7 +89,8 @@ function showData(data){
     //3:
     dest.lastElementChild.addEventListener("click", ()=>{
       modal.style.display = "block";
-document.querySelector("#myModal h2").innerHTML = movie.Title;
+document.querySelector("#myModal .desktop").innerHTML = movie.Title;
+document.querySelector("#myModal .mobile").innerHTML = movie.Title;
 document.querySelector("#myModal p").innerHTML = movie.Plot;
 document.querySelector(".rating").innerHTML = "Rating: " + movie.Rating;
 document.querySelector(".modal-content").lastElementChild.innerHTML = "Year: " + movie.Year;
