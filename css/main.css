@@ -167,7 +167,7 @@ textarea {
   display: none;
   position: fixed;
   z-index: 1;
-  padding-top: 100px;
+  padding-top: 5vh;
   left: 0;
   top: 0;
   width: 100%;
@@ -332,5 +332,8 @@ footer h2 {
   }
   .modal-content {
     width: 80%;
+  }
+  .modal {
+    padding-top: 12vh;
   }
 }
