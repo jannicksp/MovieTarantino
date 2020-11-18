@@ -82,7 +82,9 @@ function showData(data){
       modal.style.display = "block";
 document.querySelector("#myModal h2").innerHTML = movie.Title;
 document.querySelector("#myModal p").innerHTML = movie.Plot;
-document.querySelector(".modal-content").lastElementChild.innerHTML = movie.Year;
+document.querySelector(".rating").innerHTML += movie.Ratings[0].Value;
+document.querySelector(".modal-content").lastElementChild.innerHTML += movie.Year;
+
   //to do: add the rest, video src etc
     })
   }); 
